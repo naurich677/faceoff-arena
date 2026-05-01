@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Camera, ScanFace, Swords, Trophy, Users, Zap, ArrowRight } from "lucide-react";
+import { Camera, ScanFace, Swords, Trophy, Zap, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -176,4 +176,4 @@ function Stat({ label, value, gold }: { label: string; value: string; gold?: boo
   );
 }
 
-function Users(_props: any) { return null; }
+
