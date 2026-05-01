@@ -14,7 +14,157 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      elo_history: {
+        Row: {
+          created_at: string
+          elo_value: number
+          id: string
+          match_id: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          elo_value: number
+          id?: string
+          match_id?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          elo_value?: number
+          id?: string
+          match_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "elo_history_match_id_fkey"
+            columns: ["match_id"]
+            isOneToOne: false
+            referencedRelation: "matches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "elo_history_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      matches: {
+        Row: {
+          created_at: string
+          duration: number
+          elo_delta: number | null
+          id: string
+          player1_id: string
+          player2_id: string | null
+          status: string
+          votes_p1: number
+          votes_p2: number
+          winner_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          duration?: number
+          elo_delta?: number | null
+          id?: string
+          player1_id: string
+          player2_id?: string | null
+          status?: string
+          votes_p1?: number
+          votes_p2?: number
+          winner_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          duration?: number
+          elo_delta?: number | null
+          id?: string
+          player1_id?: string
+          player2_id?: string | null
+          status?: string
+          votes_p1?: number
+          votes_p2?: number
+          winner_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "matches_player1_id_fkey"
+            columns: ["player1_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "matches_player2_id_fkey"
+            columns: ["player2_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "matches_winner_id_fkey"
+            columns: ["winner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          age_verified: boolean
+          avatar_url: string | null
+          created_at: string
+          elo: number
+          id: string
+          losses: number
+          max_streak: number
+          psl_metrics: Json | null
+          psl_score: number | null
+          streak: number
+          updated_at: string
+          username: string
+          verified_at: string | null
+          wins: number
+        }
+        Insert: {
+          age_verified?: boolean
+          avatar_url?: string | null
+          created_at?: string
+          elo?: number
+          id: string
+          losses?: number
+          max_streak?: number
+          psl_metrics?: Json | null
+          psl_score?: number | null
+          streak?: number
+          updated_at?: string
+          username: string
+          verified_at?: string | null
+          wins?: number
+        }
+        Update: {
+          age_verified?: boolean
+          avatar_url?: string | null
+          created_at?: string
+          elo?: number
+          id?: string
+          losses?: number
+          max_streak?: number
+          psl_metrics?: Json | null
+          psl_score?: number | null
+          streak?: number
+          updated_at?: string
+          username?: string
+          verified_at?: string | null
+          wins?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
