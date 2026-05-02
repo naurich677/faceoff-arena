@@ -28,11 +28,15 @@ export const Route = createRootRoute({
       { title: "1v1 Mog Arena — Live looks duels, ranked." },
       { name: "description", content: "Out-mog the stranger. Live 1v1 face-off duels with audience voting and ELO ranking. 18+ entertainment platform." },
       { name: "author", content: "Mog Arena" },
-      { property: "og:title", content: "1v1 Mog Arena — Live looks duels" },
-      { property: "og:description", content: "Out-mog the stranger. Ranked face-off duels." },
+      { property: "og:title", content: "1v1 Mog Arena — Live looks duels, ranked." },
+      { property: "og:description", content: "Out-mog the stranger. Live 1v1 face-off duels with audience voting and ELO ranking. 18+ entertainment platform." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "1v1 Mog Arena — Live looks duels, ranked." },
+      { name: "twitter:description", content: "Out-mog the stranger. Live 1v1 face-off duels with audience voting and ELO ranking. 18+ entertainment platform." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/91a099dc-4584-4037-90f7-80cc41458421/id-preview-68f17da8--9d35bbb4-1e36-46e0-a55a-4dd5f7cdef96.lovable.app-1777693351252.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/91a099dc-4584-4037-90f7-80cc41458421/id-preview-68f17da8--9d35bbb4-1e36-46e0-a55a-4dd5f7cdef96.lovable.app-1777693351252.png" },
     ],
     links: [
       {
